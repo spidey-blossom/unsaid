@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Something Small</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Floating emojis layer -->
+  <div class="float-layer" aria-hidden="true" id="floatLayer"></div>
+
+  <main class="app">
+    <div class="card">
+      <header class="top">
+        <div class="dots" aria-hidden="true"></div>
+        <p class="hint" id="progressText">1 / 4</p>
+      </header>
+
+      <!-- STATE 0 -->
+      <section class="step" data-step="0" aria-label="Landing">
+        <h1 class="title">Heyy, it’s me, Bloss.</h1>
+
+        <!-- Soft typing -->
+        <p class="text">
+          <span id="typeText"></span><span class="caret" aria-hidden="true">|</span>
+        </p>
+
+        <button class="btn primary" data-next type="button">Continue</button>
+
+        <button class="btn ghost" data-exit type="button">
+          You can leave anytime.
+        </button>
+      </section>
+
+      <!-- STATE 1 -->
+      <section class="step" data-step="1" aria-label="Memory" hidden>
+        <h2 class="title">This was real</h2>
+        <p class="text">Just the moments with you I still remember clearly.</p>
+
+        <div class="moments" role="list">
+          <div class="moment" role="listitem">
+            <p class="moment-date">Dec 17</p>
+            <p class="moment-text">we had started talking here lol</p>
+          </div>
+          <div class="moment" role="listitem">
+            <p class="moment-date">Dec 19</p>
+            <p class="moment-text">we chose each other, to be something more</p>
+          </div>
+          <div class="moment" role="listitem">
+            <p class="moment-date">Dec 31</p>
+            <p class="moment-text">New Year at your place, honestly i'd have this moment again</p>
+          </div>
+          <div class="moment" role="listitem">
+            <p class="moment-date">Feb</p>
+            <p class="moment-text">Visiting you at potch and experienced living together, you are so strict haha</p>
+          </div>
+        </div>
+
+        <!-- PHOTO SLIDER (AUTO LOADS FROM /images) -->
+        <div class="slider" id="photoSlider">
+          <p class="slider-label">These are few pictures i like</p>
+
+          <div class="slider-frame">
+            <img id="sliderImg" alt="Memory photo" />
+          </div>
+
+          <div class="slider-controls">
+            <button class="btn small" id="prevImg" type="button">Back</button>
+            <button class="btn small" id="nextImg" type="button">Next</button>
+          </div>
+
+          <p class="slider-note" id="sliderCount"></p>
+          <p class="tiny slider-hint" id="sliderHint"></p>
+        </div>
+
+        <div class="row">
+          <button class="btn" data-back type="button">Back</button>
+          <button class="btn primary" data-next type="button">Keep going</button>
+        </div>
+      </section>
+
+      <!-- STATE 2 -->
+      <section class="step" data-step="2" aria-label="Truth" hidden>
+        <h2 class="title">This is what happened</h2>
+        <p class="text">No blaming. Buuuut Just what i think is the truth.</p>
+
+        <div class="truth">
+          <p>Around May, I got consumed by life and school?</p>
+          <p>We drifted apart slowly.</p>
+          <p>You ended things, it was mutual..and Breaking up felt logical… but it didn’t feel right to either of us.</p>
+          <p>I didn’t know how to talk after, even now. Silence became the default and life went on. Not so much for me</p>
+        </div>
+
+        <div class="row">
+          <button class="btn" data-back type="button">Back</button>
+          <button class="btn primary" data-next type="button">Buuuutttt There’s one more thing</button>
+        </div>
+      </section>
+
+      <!-- STATE 3 -->
+      <section class="step" data-step="3" aria-label="Offer" hidden>
+        <h2 class="title">If you’re open Ms. Mvubu</h2>
+        <p class="text">
+          No pressure. Just two honest options. You choose what feels right to you, to us.
+        </p>
+
+        <div class="choices">
+          <button class="choice" id="choiceYes" type="button">
+            <span class="choice-title">A</span>
+            <span class="choice-text">I’m open to trying again let’s talk.</span>
+          </button>
+
+          <button class="choice" id="choiceNo" type="button">
+            <span class="choice-title">B</span>
+            <span class="choice-text">I care, but I’m not there.</span>
+          </button>
+        </div>
+
+        <div class="ending" id="ending" hidden>
+          <h3 class="ending-title" id="endingTitle"></h3>
+          <p class="ending-text" id="endingText"></p>
+
+          <div class="row">
+            <button class="btn" data-back type="button">Back</button>
+            <a class="btn primary" id="whatsappBtn" href="#" target="_blank" rel="noopener">
+              Open WhatsApp
+            </a>
+          </div>
+
+          <p class="tiny">(It opens a message you can edit before sending.)</p>
+        </div>
+
+        <div class="row" id="offerNav">
+          <button class="btn" data-back type="button">Back</button>
+          <button class="btn ghost" data-exit type="button">Close</button>
+        </div>
+      </section>
+    </div>
+    <audio id="bgMusic" loop preload="auto">
+  <source src="audio/background.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicToggle" class="music-toggle" aria-label="Toggle music">
+  🔈
+</button>
+
+
+    <footer class="footer">
+      <p class="tiny">I struggle to put into words so i made this. Nothing more.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
